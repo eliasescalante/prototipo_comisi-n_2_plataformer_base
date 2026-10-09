@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dcnvk6yd0e6m3"]
+
+[ext_resource type="Texture2D" uid="uid://hxjm7i7a400b" path="res://icon.svg" id="1_4xjaq"]
+[ext_resource type="Script" uid="uid://scj3vk6j0cyh" path="res://src/scenes/Entidades/PlayerTopDown/player_top_down.gd" id="1_qr04h"]
+[ext_resource type="PackedScene" uid="uid://desn3lirc5qqi" path="res://src/scenes/Entidades/Bala/Bala.tscn" id="2_prhlc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr04h"]
+
+[node name="PlayerTopDown" type="CharacterBody2D" unique_id=1071093898]
+script = ExtResource("1_qr04h")
+bala = ExtResource("2_prhlc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2125219077]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_qr04h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1100437538]
+rotation = 4.712389
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4xjaq")

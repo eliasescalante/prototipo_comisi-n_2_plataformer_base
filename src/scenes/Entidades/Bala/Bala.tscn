@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://desn3lirc5qqi"]
+
+[ext_resource type="Texture2D" uid="uid://ckgpggpbw06lh" path="res://assets/SpaceShooterPack/PNG/bullet-1.png" id="1_8uqyl"]
+[ext_resource type="Script" uid="uid://iqkf4iufphvm" path="res://src/scenes/Entidades/Bala/bala.gd" id="1_xvsbn"]
+[ext_resource type="Texture2D" uid="uid://cbi1rjvtj21rv" path="res://assets/SpaceShooterPack/PNG/bullet-2.png" id="2_xvsbn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhsag"]
+size = Vector2(20, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhsag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8uqyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xvsbn")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="Bala" type="Area2D" unique_id=1825562481]
+script = ExtResource("1_xvsbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=597825525]
+position = Vector2(0, -0.5)
+rotation = 1.5675383
+shape = SubResource("RectangleShape2D_fhsag")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=289028515]
+rotation = 4.712389
+sprite_frames = SubResource("SpriteFrames_fhsag")
+animation = &"idle"
+frame_progress = 0.9421914
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=544386809]
+rotation = 1.5796046
+rect = Rect2(-10, -21.566292, 20, 42.74704)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
