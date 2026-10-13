@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dpsv6d2sbqmsf"]
+
+[ext_resource type="Script" uid="uid://drw324ubca72x" path="res://src/scenes/Entidades/Enemigos/EnemigoPatrullaConSensor/enemigo_patrulla_con_sensor.gd" id="1_myojm"]
+[ext_resource type="Texture2D" uid="uid://dy36ph1dtb7ll" path="res://assets/Free/Main Characters/Virtual Guy/Run (32x32).png" id="1_rc5tc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myojm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imdx5"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw1g7"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp2nq"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg5qm"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpqub"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka8ph"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ystk8"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54k8c"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yad5l"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aowgk"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stsb5"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ach"]
+atlas = ExtResource("1_rc5tc")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dt14o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imdx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw1g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp2nq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg5qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpqub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka8ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ystk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54k8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yad5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aowgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stsb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ach")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xsho"]
+
+[node name="EnemigoPatrullaConSensor" type="CharacterBody2D" unique_id=115459371]
+script = ExtResource("1_myojm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076460984]
+position = Vector2(0, 4)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_myojm")
+debug_color = Color(0.65906924, 0.5116083, 0.1784729, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2052028316]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_dt14o")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1681299704]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1713587511]
+shape = SubResource("RectangleShape2D_5xsho")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1958908347]
+target_position = Vector2(31, 34)
+
+[node name="RayCast2D2" type="RayCast2D" parent="." unique_id=981938954]
+target_position = Vector2(-31, 33)

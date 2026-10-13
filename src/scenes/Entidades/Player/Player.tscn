@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdgvb"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1062533350]
+[node name="Player" type="CharacterBody2D" unique_id=1062533350 groups=["jugador"]]
 script = ExtResource("1_suayt")
 bala = ExtResource("2_sjabw")
 
@@ -17,3 +17,7 @@ shape = SubResource("RectangleShape2D_wdgvb")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=338232229]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_6igec")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1489249473]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true

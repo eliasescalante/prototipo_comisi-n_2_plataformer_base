@@ -23,10 +23,15 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
+"res://assets/": "pink",
 "res://src/core/": "red",
-"res://src/scenes/": "orange",
+"res://src/scenes/": "green",
 "res://src/utils/": "purple"
 }
+
+[global_group]
+
+jugador=""
 
 [input]
 
