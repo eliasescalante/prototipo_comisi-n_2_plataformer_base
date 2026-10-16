@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bisxfh1hmefb2"]
+
+[ext_resource type="Script" uid="uid://b7xan3nnbv0v8" path="res://src/scenes/Entidades/Player/player.gd" id="1_suayt"]
+[ext_resource type="Texture2D" uid="uid://hxjm7i7a400b" path="res://icon.svg" id="2_6igec"]
+[ext_resource type="PackedScene" uid="uid://desn3lirc5qqi" path="res://src/scenes/Entidades/Bala/Bala.tscn" id="2_sjabw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdgvb"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1062533350 groups=["jugador"]]
+script = ExtResource("1_suayt")
+bala = ExtResource("2_sjabw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1984984247]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_wdgvb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=338232229]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6igec")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1489249473]
+position = Vector2(-1, 4)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0

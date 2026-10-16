@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bsgadmjipnhad"]
+
+[ext_resource type="Script" uid="uid://b146typbpqgbq" path="res://src/scenes/Entidades/Enemigos/EnemigoAcosadorSimplificado/enemigo_acosador_simplificado.gd" id="1_15fen"]
+[ext_resource type="Texture2D" uid="uid://dy36ph1dtb7ll" path="res://assets/Free/Main Characters/Virtual Guy/Run (32x32).png" id="1_xec8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15fen"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imdx5"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw1g7"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp2nq"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg5qm"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpqub"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka8ph"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ystk8"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54k8c"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yad5l"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aowgk"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stsb5"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ach"]
+atlas = ExtResource("1_xec8y")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4n83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imdx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw1g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp2nq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg5qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpqub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka8ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ystk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54k8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yad5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aowgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stsb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ach")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j75mn"]
+size = Vector2(172, 108)
+
+[node name="EnemigoAcosadorSimplificado" type="CharacterBody2D" unique_id=664300669]
+script = ExtResource("1_15fen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2144266969]
+position = Vector2(0, 4)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_15fen")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=462673412]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_a4n83")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=739325633]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=842188037]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_j75mn")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

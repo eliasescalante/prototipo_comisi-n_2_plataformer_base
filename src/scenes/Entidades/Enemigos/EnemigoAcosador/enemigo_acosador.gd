@@ -36,7 +36,6 @@ func aplicar_movimiento():
 		elif persiguiendo and distancia_al_jugador > rango_de_deteccion:
 			persiguiendo = false
 			punto_de_inicio_en_x = global_position.x
-
 func perseguir_jugador():
 	if jugador.global_position.x > global_position.x:
 		direccion_actual = 1
@@ -44,19 +43,16 @@ func perseguir_jugador():
 		direccion_actual = -1
 	actualizar_animaciones(direccion_actual)
 	velocity.x = direccion_actual * velocidad # formulita general para movimiento en characterbody2d
-	
 func patrullar(delta):
 	comprobar_limite_de_distancia()
 	actualizar_animaciones(direccion_actual)
 	velocity.x = direccion_actual * velocidad
-
 func actualizar_animaciones(direccion):
 	animated_sprite_2d.play("idle")
 	if direccion > 0:
 		animated_sprite_2d.flip_h = false
 	else:
 		animated_sprite_2d.flip_h = true
-
 func comprobar_limite_de_distancia():
 	if abs(global_position.x - punto_de_inicio_en_x) >= distancia:
 		direccion_actual *= -1

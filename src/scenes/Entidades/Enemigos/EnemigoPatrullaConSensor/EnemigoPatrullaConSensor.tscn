@@ -99,7 +99,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xsho"]
 
-[node name="EnemigoPatrullaConSensor" type="CharacterBody2D" unique_id=115459371]
+[node name="EnemigoPatrullaConSensor" type="CharacterBody2D" unique_id=115459371 groups=["enemigo"]]
 script = ExtResource("1_myojm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076460984]
@@ -116,6 +116,7 @@ animation = &"idle"
 [node name="Area2D" type="Area2D" parent="." unique_id=1681299704]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1713587511]
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_5xsho")
 debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
 
@@ -124,3 +125,5 @@ target_position = Vector2(31, 34)
 
 [node name="RayCast2D2" type="RayCast2D" parent="." unique_id=981938954]
 target_position = Vector2(-31, 33)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
